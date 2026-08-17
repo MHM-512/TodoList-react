@@ -1,7 +1,7 @@
 import EditIcon from "../EditIcons/EditIcon";
 import DeleteIcone from "../EditIcons/DeleteIcon";
 
-export default function TodoListItem({ todo, onToggleTodo }) {
+export default function TodoListItem({ todo, onToggleTodo ,onDeleteTodo }) {
 
 
     return (
@@ -24,6 +24,7 @@ export default function TodoListItem({ todo, onToggleTodo }) {
 
             <button
                 type="button"
+                onClick={() => onDeleteTodo(todo.id)}
                 className="absolute right-0 flex items-center space-x-2"
             >
                 <EditIcon />

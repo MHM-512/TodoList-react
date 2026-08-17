@@ -1,6 +1,6 @@
 import TodoListItem from "./TodoListItem";
 
-export default function TodoList({ todos, onToggleTodo }) {
+export default function TodoList({ todos, onToggleTodo , onDeleteTodo }) {
     
     
     return (
@@ -10,6 +10,7 @@ export default function TodoList({ todos, onToggleTodo }) {
                     key={todo.id}
                     todo={todo}
                     onToggleTodo={onToggleTodo}
+                    onDeleteTodo={onDeleteTodo}
                 />
 
             ))}

@@ -15,8 +15,5 @@
 
   }
 
-// data delete
-    const handleDelete = () => {
-        setTodos((prevTodos) => prevTodos.filter((todos) => todos.id !== item.id));
-    };
+
 

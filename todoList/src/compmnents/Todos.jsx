@@ -6,7 +6,7 @@ export default function Todos() {
         {
             id: 1,
             title: 'Tailwind CSS To DO App List 1',
-            status: false,
+            status: true,
         },
         {
             id: 2,
@@ -44,6 +44,12 @@ export default function Todos() {
             })
         )
     }
+    // data delete
+    const deleteTodo = (id) => {
+        setTodos(
+            todos.filter((todos) => todos.id !== id)
+        );
+    };
 
     return (
         <div className="flex items-center justify-center h-screen">
@@ -66,6 +72,7 @@ export default function Todos() {
                 <TodoList
                     todos={todos}
                     onToggleTodo={toggleTodo}
+                    onDeleteTodo={deleteTodo}
                 />
 
             </div>
