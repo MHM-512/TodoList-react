@@ -5,12 +5,12 @@ export default function Todos() {
     const [todos, setTodos] = useState([
         {
             id: 1,
-            title: 'Tailwind CSS To DO App List 1',
+            title: 'Tailwind CSS To DO App List',
             status: true,
         },
         {
             id: 2,
-            title: 'Tailwind CSS To DO App List 2',
+            title: 'Tailwind CSS To DO App List',
             status: false,
         },
     ]);
@@ -30,7 +30,7 @@ export default function Todos() {
 
         setInputValue('');
     }
-    // checke
+    // toggleTodo(checke)
     function toggleTodo(id) {
         setTodos(
             todos.map((todo) => {
@@ -44,12 +44,28 @@ export default function Todos() {
             })
         )
     }
+
     // data delete
     const deleteTodo = (id) => {
         setTodos(
             todos.filter((todos) => todos.id !== id)
         );
     };
+    //data Edit 
+    function editTodo(id, newTitle) {
+        setTodos(
+            todos.map((todo) => {
+                if (todo.id === id) {
+                    return {
+                        ...todo,
+                        title: newTitle
+                    };
+                }
+
+                return todo;
+            })
+        );
+    }
 
     return (
         <div className="flex items-center justify-center h-screen">
@@ -73,6 +89,8 @@ export default function Todos() {
                     todos={todos}
                     onToggleTodo={toggleTodo}
                     onDeleteTodo={deleteTodo}
+                    onEditTodo = {editTodo}
+                    onaddTodo = {addTodo}
                 />
 
             </div>

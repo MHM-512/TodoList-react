@@ -1,8 +1,7 @@
 import TodoListItem from "./TodoListItem";
 
-export default function TodoList({ todos, onToggleTodo , onDeleteTodo }) {
-    
-    
+export default function TodoList({ todos, onToggleTodo, onDeleteTodo, onEditTodo , onaddTodo }) {
+
     return (
         <ul className="list-reset">
             {todos.map((todo) => (
@@ -11,6 +10,8 @@ export default function TodoList({ todos, onToggleTodo , onDeleteTodo }) {
                     todo={todo}
                     onToggleTodo={onToggleTodo}
                     onDeleteTodo={onDeleteTodo}
+                    onEditTodo={onEditTodo}
+                    onaddTodo = {onaddTodo}
                 />
 
             ))}
