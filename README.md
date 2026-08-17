@@ -17,8 +17,8 @@
         │             │    │                 │   │
         ▼             ▼    ▼                 ▼   ▼
       todos      inputValue addTodo      toggleTodo
-                                      deleteTodo
-                                      editTodo
+                                         deleteTodo
+                                          editTodo
                                                │
                                                ▼
                                       ┌────────────────┐
