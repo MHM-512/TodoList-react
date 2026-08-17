@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TodoList from "./todoList";
+import TodoList from "./TodoList";
 
 export default function Todos() {
     const [todos, setTodos] = useState([
@@ -30,6 +30,20 @@ export default function Todos() {
 
         setInputValue('');
     }
+    // checke
+    function toggleTodo(id) {
+        setTodos(
+            todos.map((todo) => {
+                if (todo.id === id) {
+                    return {
+                        ...todo,
+                        status: !todo.status,
+                    }
+                }
+                return todo
+            })
+        )
+    }
 
     return (
         <div className="flex items-center justify-center h-screen">
@@ -49,7 +63,10 @@ export default function Todos() {
                         className="w-full px-2 py-3 border rounded outline-none border-gray-600" />
                 </div>
 
-                <TodoList todos={todos} />
+                <TodoList
+                    todos={todos}
+                    onToggleTodo={toggleTodo}
+                />
 
             </div>
         </div>
